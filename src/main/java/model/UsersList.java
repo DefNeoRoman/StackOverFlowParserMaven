@@ -2,11 +2,13 @@ package model;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 @Data
 public class UsersList {
-    private LinkedList items = new LinkedList();
+    private List items = new ArrayList();
 
     @Override
     public String toString() {
