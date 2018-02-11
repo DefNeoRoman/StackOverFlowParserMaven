@@ -1,0 +1,30 @@
+
+
+{
+  "Grandparent1": {
+                    "device": "aaaaaaa",
+                    "fstype": "bbbbbbb",
+                    "options": [ "ssd","jkj","klklll","oppooo" ]
+  },
+  "Grandparent2": {
+                    "device": "cccccccc",
+                    "fstype": "dddddddd"
+  },
+  "Grandparent3": {
+                    "device": {"father":"childrenFather",
+                               "mother":"childrenMother"
+                              },
+                    "newLevel":{
+                                "fstype":    "eeeeeee",
+                                "options": [ "fffffff" ]
+                                }
+  },
+  "Grandparent4": {
+                     "device": {
+                                "/dev/data/mysql":"sister",
+                                "ParentOfBrother":"brother"
+                                },
+                     "fstype": "ggggggggg"
+  },
+  "GrantParent5":"Anyvalue"
+}

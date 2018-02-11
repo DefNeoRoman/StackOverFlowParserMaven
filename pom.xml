@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>StackOverFlowParserMaven</groupId>
     <artifactId>StackOverFlowParserMaven</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -104,4 +103,32 @@
         <version>2.2.0</version>
     </dependency>
 </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>json-schema-validator</artifactId>
+                <groupId>com.groupon.maven.plugin.json</groupId>
+                <version>1.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <validations>
+                        <validation>
+                            <directory>${basedir}/src/main/resources/json</directory>
+                            <jsonSchema>${basedir}/src/main/resources/schemas/data.schema</jsonSchema>
+                            <includes>
+                                <include>**/*.json</include>
+                            </includes>
+                        </validation>
+                    </validations>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

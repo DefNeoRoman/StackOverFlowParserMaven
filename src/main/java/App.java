@@ -10,6 +10,7 @@ import java.net.URISyntaxException;
 
 public class App {
     public static void main(String[] args) throws URISyntaxException {
+
         HttpClient httpClient = HttpClientBuilder.create().build();
         ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
         String url = "https://api.stackexchange.com/2.2/users?order=desc&sort=reputation&site=stackoverflow&filter=!G*klMw.bdPL7GIqCsR2z1uOH5e";
